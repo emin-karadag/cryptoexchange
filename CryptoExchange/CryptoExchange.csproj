@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+    <Title>CryptoExchange</Title>
+    <Authors>Mehmet Emin KARADAĞ</Authors>
+    <PackageProjectUrl>https://github.com/emin-karadag/cryptoexchange</PackageProjectUrl>
+    <Copyright>Tüm hakları saklıdır.</Copyright>
+    <RepositoryUrl>https://github.com/emin-karadag/cryptoexchange</RepositoryUrl>
+    <PackageTags>binance, binancetr, bitcoin, kripto, kripto para, binance c#, c# binance, cryptocurrency</PackageTags>
+    <PackageReleaseNotes>BinanceTR için sembol bilgisi almak işlemleri yapıldı.</PackageReleaseNotes>
+    <PackAsTool>True</PackAsTool>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="BinanceTR" Version="1.2.7.1" />
+    <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
+  </ItemGroup>
+
+</Project>
