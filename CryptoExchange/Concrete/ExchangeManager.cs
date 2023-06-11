@@ -19,5 +19,16 @@ namespace CryptoExchange.Concrete
         }
 
         public IBinanceTrExchangeService BinanceTr { get; set; }
+
+        public string CreateClientId(string prefix, int maxLength = 36)
+        {
+            if (prefix.Length > maxLength)
+                return "";
+
+            var guid = Guid.NewGuid().ToString()[..maxLength].Replace("+", "").Replace("-", "").Replace("/", "");
+            var id = $"{prefix}{guid}";
+
+            return id.Length <= maxLength ? id : id[..maxLength];
+        }
     }
 }
