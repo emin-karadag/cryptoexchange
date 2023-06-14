@@ -1,10 +1,4 @@
-﻿using BinanceTR.Models.Common;
-using Bybit.Entity.Models.Market;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Bybit.Entity.Models.Market;
 
 namespace CryptoExchange.Models.Exchanges.Bybit
 {
