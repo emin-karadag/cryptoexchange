@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="BinanceTR" Version="1.2.7.1" />
+    <PackageReference Include="BybitApi" Version="1.0.3" />
     <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="7.0.0" />
   </ItemGroup>
 

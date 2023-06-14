@@ -3,6 +3,7 @@
     public class CryptoExchangeHelper
     {
         public const string _exchangeBinanceTrPrefix = "BinanceTr";
+        public const string _exchangeBybitPrefix = "Bybit";
         public static int GetPrecission(string? value)
         {
             if (string.IsNullOrEmpty(value))

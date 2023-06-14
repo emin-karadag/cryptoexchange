@@ -5,6 +5,8 @@
         TRY,
         USDT,
         BUSD,
-        TUSD
+        TUSD,
+        USDC,
+        BTC
     }
 }

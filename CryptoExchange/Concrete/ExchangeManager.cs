@@ -1,4 +1,5 @@
 ﻿using BinanceTR.Business.Abstract;
+using Bybit.Business.Abstract;
 using CryptoExchange.Abstract;
 using CryptoExchange.Abstract.Exchanges;
 using CryptoExchange.Abstract.General;
@@ -10,15 +11,20 @@ namespace CryptoExchange.Concrete
     {
         private readonly IExchangeCacheService _exchangeCacheService;
         private readonly IBinanceTrService _binanceTrService;
-        public ExchangeManager(IExchangeCacheService exchangeCacheService, IBinanceTrService binanceTrService)
+        private readonly IBybitService _bybitService;
+
+        public ExchangeManager(IExchangeCacheService exchangeCacheService, IBinanceTrService binanceTrService, IBybitService bybitService)
         {
             _exchangeCacheService = exchangeCacheService;
             _binanceTrService = binanceTrService;
+            _bybitService = bybitService;
 
             BinanceTr = new BinanceTrExchangeManager(_exchangeCacheService, _binanceTrService);
+            Bybit = new BybitExchangeManager(_exchangeCacheService, _bybitService);
         }
 
         public IBinanceTrExchangeService BinanceTr { get; set; }
+        public IBybitExchangeService Bybit { get; set; }
 
         public string CreateClientId(string prefix, int maxLength = 36)
         {

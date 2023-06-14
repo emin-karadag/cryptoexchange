@@ -3,6 +3,8 @@
     public enum SymbolTypeEnum
     {
         ALL,
-        SPOT
+        SPOT,
+        USD_M,
+        COIN_M
     }
 }
