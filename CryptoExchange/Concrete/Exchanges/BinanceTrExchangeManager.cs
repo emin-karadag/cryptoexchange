@@ -68,7 +68,8 @@ namespace CryptoExchange.Concrete.Exchanges
                     {
                         Name = symbol.Symbol.Replace("_", ""),
                         Symbol = symbol.Symbol,
-                        MinQty = symbol.Filters.Find(p => p.FilterType == "NOTIONAL")?.MinNotional ?? 0,
+                        MinAmount = symbol.Filters.Find(p => p.FilterType == "NOTIONAL")?.MinNotional ?? 0,
+                        MinQty = symbol.Filters.Find(p => p.FilterType == "LOT_SIZE")?.MinQty ?? 0,
                         PricePrecission = CryptoExchangeHelper.GetPrecission(symbol.Filters.Find(p => p.FilterType == "PRICE_FILTER")?.TickSize.ToString(CultureInfo.InvariantCulture)),
                         QuantityPrecission = CryptoExchangeHelper.GetPrecission(symbol.Filters.Find(p => p.FilterType == "LOT_SIZE")?.StepSize.ToString(CultureInfo.InvariantCulture))
                     });

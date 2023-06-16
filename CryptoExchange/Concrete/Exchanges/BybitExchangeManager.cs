@@ -133,7 +133,7 @@ namespace CryptoExchange.Concrete.Exchanges
                 Name = symbol.Symbol ?? "",
                 Symbol = symbol.Symbol ?? "",
                 MinQty = symbol.LotSizeFilter?.MinOrderQty,
-                MinUsdAmount = symbol.LotSizeFilter?.MinOrderAmt ?? 0,
+                MinAmount = symbol.LotSizeFilter?.MinOrderAmt ?? 0,
                 PricePrecission = CryptoExchangeHelper.GetPrecission(symbol.PriceFilter?.TickSize.ToString(CultureInfo.InvariantCulture)),
                 QuantityPrecission = CryptoExchangeHelper.GetPrecission(symbol.LotSizeFilter?.BasePrecision?.ToString(CultureInfo.InvariantCulture))
             });
