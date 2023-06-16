@@ -11,10 +11,10 @@
     <Copyright>Tüm hakları saklıdır.</Copyright>
     <RepositoryUrl>https://github.com/emin-karadag/cryptoexchange</RepositoryUrl>
     <PackageTags>binance, binancetr, bitcoin, kripto, kripto para, binance c#, c# binance, cryptocurrency</PackageTags>
-    <PackageReleaseNotes>"CreateClientId" metodu yapıldı.</PackageReleaseNotes>
-    <Version>1.0.3</Version>
-    <AssemblyVersion>1.0.0.3</AssemblyVersion>
-    <FileVersion>1.0.0.3</FileVersion>
+    <PackageReleaseNotes>MinUsdAmount -> MinAmount yapıldı.</PackageReleaseNotes>
+    <Version>1.0.4</Version>
+    <AssemblyVersion>1.0.0.4</AssemblyVersion>
+    <FileVersion>1.0.0.4</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
