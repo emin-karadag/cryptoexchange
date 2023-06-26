@@ -21,10 +21,12 @@ namespace CryptoExchange.Concrete
 
             BinanceTr = new BinanceTrExchangeManager(_exchangeCacheService, _binanceTrService);
             Bybit = new BybitExchangeManager(_exchangeCacheService, _bybitService);
+            Binance = new BinanceExchangeManager(_exchangeCacheService);
         }
 
         public IBinanceTrExchangeService BinanceTr { get; set; }
         public IBybitExchangeService Bybit { get; set; }
+        public IBinanceExchangeService Binance { get; set; }
 
         public string CreateClientId(string prefix, int maxLength = 36)
         {

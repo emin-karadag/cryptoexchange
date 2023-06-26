@@ -7,6 +7,7 @@
         BUSD,
         TUSD,
         USDC,
+        USD,
         BTC
     }
 }

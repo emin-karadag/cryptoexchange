@@ -4,6 +4,7 @@
     {
         public const string _exchangeBinanceTrPrefix = "BinanceTr";
         public const string _exchangeBybitPrefix = "Bybit";
+        public const string _exchangeBinancePrefix = "Binance";
         public static int GetPrecission(string? value)
         {
             if (string.IsNullOrEmpty(value))
