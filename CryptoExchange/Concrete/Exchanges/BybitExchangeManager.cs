@@ -1,5 +1,6 @@
 ﻿using Bybit.Business.Abstract;
 using Bybit.Entity.Dtos.Market;
+using Bybit.Entity.Models.Market;
 using Bybit.Models.Enums;
 using CryptoExchange.Abstract.Exchanges;
 using CryptoExchange.Abstract.General;
@@ -93,7 +94,7 @@ namespace CryptoExchange.Concrete.Exchanges
 
                     if (symbols.Linear is not null)
                         foreach (var symbol in symbols.Linear)
-                            FillSymbolInfoList(list, symbol);
+                            FillSymbolInfoList(list, symbol, CategoryEnum.LINEAR);
 
                     if (symbols.Inverse is not null)
                         foreach (var symbol in symbols.Inverse)
@@ -126,8 +127,12 @@ namespace CryptoExchange.Concrete.Exchanges
             }
         }
 
-        private static void FillSymbolInfoList(List<SymbolInfo> list, Bybit.Entity.Models.Market.InstrumentsInfoDataList symbol)
+        private static void FillSymbolInfoList(List<SymbolInfo> list, InstrumentsInfoDataList symbol, CategoryEnum category = CategoryEnum.SPOT)
         {
+            var quantityPrecission = symbol.LotSizeFilter?.BasePrecision;
+            if (category == CategoryEnum.LINEAR)
+                quantityPrecission = symbol.LotSizeFilter?.MinOrderQty;
+
             list.Add(new SymbolInfo
             {
                 Name = symbol.Symbol ?? "",
@@ -135,7 +140,7 @@ namespace CryptoExchange.Concrete.Exchanges
                 MinQty = symbol.LotSizeFilter?.MinOrderQty,
                 MinAmount = symbol.LotSizeFilter?.MinOrderAmt ?? 0,
                 PricePrecission = CryptoExchangeHelper.GetPrecission(symbol.PriceFilter?.TickSize.ToString(CultureInfo.InvariantCulture)),
-                QuantityPrecission = CryptoExchangeHelper.GetPrecission(symbol.LotSizeFilter?.BasePrecision?.ToString(CultureInfo.InvariantCulture))
+                QuantityPrecission = CryptoExchangeHelper.GetPrecission(quantityPrecission?.ToString(CultureInfo.InvariantCulture))
             });
         }
     }

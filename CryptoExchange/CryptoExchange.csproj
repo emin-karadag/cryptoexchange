@@ -11,10 +11,10 @@
     <Copyright>Tüm hakları saklıdır.</Copyright>
     <RepositoryUrl>https://github.com/emin-karadag/cryptoexchange</RepositoryUrl>
     <PackageTags>binance, binancetr, bitcoin, kripto, kripto para, binance c#, c# binance, cryptocurrency</PackageTags>
-    <PackageReleaseNotes>Binance için sembol bilgisi alma metotları eklendi.</PackageReleaseNotes>
-    <Version>1.0.5</Version>
-    <AssemblyVersion>1.0.0.5</AssemblyVersion>
-    <FileVersion>1.0.0.5</FileVersion>
+    <PackageReleaseNotes>LINEAR kategorisindeki sembol bilgilerinde QuantityPresission 0 (sıfır) gelme sorunu giderildi.</PackageReleaseNotes>
+    <Version>1.0.6</Version>
+    <AssemblyVersion>1.0.0.6</AssemblyVersion>
+    <FileVersion>1.0.0.6</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
